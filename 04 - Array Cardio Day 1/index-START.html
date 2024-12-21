@@ -144,13 +144,21 @@
          ];
 
          const transportation = data.reduce((a, c) => {
-            if(!a[c]) {
-              a[c] = 0;
+            if (!a[c]) {
+               a[c] = 0;
             }
             a[c]++;
             return a;
          }, {});
          console.log(transportation);
+
+         // added by me
+
+         let lastResult = [];
+         inventors.forEach((inventor) => {
+            lastResult.push(inventor.last);
+         });
+         console.log(lastResult);
       </script>
    </body>
 </html>
