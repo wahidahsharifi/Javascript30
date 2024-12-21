@@ -1,52 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Scoped CSS Variables and JS</title>
-  <link rel="icon" href="https://fav.farm/🔥" />
-</head>
-<body>
-  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+   <head>
+      <meta charset="UTF-8" />
+      <title>Scoped CSS Variables and JS</title>
+      <link rel="icon" href="https://fav.farm/🔥" />
+   </head>
+   <body>
+      <h2>Update CSS Variables with <span class="hl">JS</span></h2>
 
-  <div class="controls">
-    <label for="spacing">Spacing:</label>
-    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+      <div class="controls">
+         <label for="spacing">Spacing:</label>
+         <input
+            id="spacing"
+            type="range"
+            name="spacing"
+            min="10"
+            max="200"
+            value="10"
+            data-sizing="px" />
 
-    <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+         <label for="blur">Blur:</label>
+         <input
+            id="blur"
+            type="range"
+            name="blur"
+            min="0"
+            max="25"
+            value="0"
+            data-sizing="px" />
 
-    <label for="base">Base Color</label>
-    <input id="base" type="color" name="base" value="#ffc600">
-  </div>
+         <label for="base">Base Color</label>
+         <input id="base" type="color" name="base" value="#ffffff" />
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+         <label for="radius">Radius:</label>
+         <input
+            id="radius"
+            type="range"
+            name="radius"
+            min="0"
+            max="100"
+            value="0"
+            data-sizing="px" />
+      </div>
 
-  <style>
+      <div id="img"></div>
 
-    /*
+      <style>
+         /*
       misc styles, nothing to do with CSS variables
     */
 
-    body {
-      text-align: center;
-      background: #193549;
-      color: white;
-      font-family: 'helvetica neue', sans-serif;
-      font-weight: 100;
-      font-size: 50px;
-    }
+         body {
+            text-align: center;
+            background: #193549;
+            color: white;
+            font-family: "helvetica neue", sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+         }
 
-    .controls {
-      margin-bottom: 50px;
-    }
+         .controls {
+            margin-bottom: 50px;
+         }
 
-    input {
-      width: 100px;
-    }
-  </style>
+         input {
+            width: 100px;
+         }
+         #img {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            padding: 10px;
+            margin: auto;
+         }
+      </style>
 
-  <script>
-  </script>
+      <script>
+         const updateDom = {
+            h1: document.querySelector(".hl"),
+            img: document.querySelector("#img"),
+            spacing: document.getElementById("spacing"),
+            blur: document.getElementById("blur"),
+            color: document.getElementById("base"),
+            radius: document.getElementById("radius"),
 
-</body>
+            changeColor: function() {
+               this.h1.style.color = `${this.color.value}`;
+               this.img.style.backgroundColor = `${this.color.value}`;
+            },
+            changeSpacing: function() {
+               this.img.style.padding = `${this.spacing.value}px`;
+            },
+            changeBlur: function() {
+               this.img.style.filter = `blur(${this.blur.value}px)`;
+            },
+            changeRadius: function() {
+               this.img.style.borderRadius = `${this.radius.value}%`;
+            }
+         };
+         updateDom.color.addEventListener('change', () => updateDom.changeColor());
+         updateDom.spacing.addEventListener('change', () => updateDom.changeSpacing());
+         updateDom.blur.addEventListener('change', () => updateDom.changeBlur());
+         updateDom.radius.addEventListener('change', () => updateDom.changeRadius());
+         
+         updateDom.color.addEventListener('mousemove', () => updateDom.changeColor());
+         updateDom.spacing.addEventListener('mousemove', () => updateDom.changeSpacing());
+         updateDom.blur.addEventListener('mousemove', () => updateDom.changeBlur());
+         updateDom.radius.addEventListener('mousemove', () => updateDom.changeRadius());
+      </script>
+   </body>
 </html>
