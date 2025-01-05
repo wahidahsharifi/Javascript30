@@ -4,15 +4,157 @@
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
   <link rel="icon" href="https://fav.farm/🔥" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,1,-50..200&icon_names=stylus" />
 </head>
 <body>
+  <header>
+    <div>
+      <div>
+        <label for="color">Pen Color:</label>
+        <input type="color" id="color" value="#BADA55">
+      </div>
+      <div>
+        <label for="size">Pen Size:</label>
+        <input type="number" id="size" min="1" max="300" value="10">
+      </div>
+      <div>
+        <label for="Bcolor">Board Color:</label>
+        <input type="color" id="Bcolor" value="#ffffff">
+      </div>
+      <span id="erase"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 106"><defs><style>.cls-1{fill:#ffc868;}.cls-2{fill:#485761;}.cls-3{fill:#171c1f;}.cls-4{fill:#70cbf6;}.cls-5{opacity:0.1;}</style></defs><title>paint-brush</title><g id="Paint-Brush"><g id="Fill"><path class="cls-1" d="M101.82,4.43A9.32,9.32,0,0,0,95.07,2c-8.88,0-20.81,7.79-24.4,19.38A18.4,18.4,0,0,1,52.94,34.21,12.11,12.11,0,0,1,45.09,31l-3-3L32,38l36,36L78.18,64,75.35,61.2c-2.48-2.47-3.57-9.12-2.7-12.63,1.64-6.56,6-11.38,12.08-13.22,10.38-3.17,17.11-12.61,19-20C104.87,10.66,104.2,6.79,101.82,4.43ZM90,20a4,4,0,1,1,4-4A4,4,0,0,1,90,20Z"/></g><g id="Gray"><rect class="cls-2" x="13.79" y="45.54" width="42.43" height="50.91" transform="translate(-39.95 45.54) rotate(-45)"/></g><g id="Inner_Lines_2" data-name="Inner Lines 2"><path class="cls-3" d="M8.29,73.29l1.41,1.41L32.29,49.29Zm7,7,1.41,1.41L39.29,56.29Zm14,14,1.41,1.41L53.29,70.29Zm4,4,1.41,1.41L57.29,74.29Z"/></g><g id="Blue"><path class="cls-4" d="M21,63.89C18,63.22,10.56,71,8.54,73.7l9.9,10.11c-.11-5.73,2.9-11.18,3.47-13.48S24,64.56,21,63.89ZM34.28,88.35C33,89.58,28.91,90.7,25.8,90.9s7.32,8.27,7.32,8.27a53.32,53.32,0,0,0,3.16-7.46C37.53,87.84,35.58,87.13,34.28,88.35ZM32.56,77.57c1.42.28,2.24-.84,2.69-2.85s-.81-4.44-2.73-4.46S30,71.87,30.25,74.1,31.14,77.29,32.56,77.57ZM46.41,76a2.07,2.07,0,0,0-1.84,3c1,2.07,4.12,1.9,4.27-.7A2.21,2.21,0,0,0,46.41,76Z"/></g><g id="Shadows" class="cls-5"><path d="M65.21,71,32,37.73l-2.83,2.83L62.39,73.79,37.93,98.24,4.7,65,1.87,67.84l35,35,.49-.49,1.07,1,39-39L74.57,61.6Zm30.7-54a6,6,0,0,1-11.82,0,6,6,0,1,0,11.82,0Z"/></g><g id="Inner_Lines" data-name="Inner Lines"><path class="cls-3" d="M23.29,64.27a3,3,0,0,0-2.65-1.42,6.18,6.18,0,0,0-2.72.77,18.29,18.29,0,0,0-5.68,4.7,25.31,25.31,0,0,1-3.78,3.63L6.59,73.35,8.25,75l8.13,8.13,2.69,2.69.75-3.72c.82-4.11,2.26-10.45,2.87-11.68C23.15,69.49,24.56,66.32,23.29,64.27Zm-2.42,5.23c-1,2-3,12.19-3,12.19L9.69,73.57c4.07-3,5.08-6.1,9.15-8.13a4.29,4.29,0,0,1,1.81-.55C22.51,64.89,21.69,67.86,20.87,69.51ZM49,76.13A3.33,3.33,0,0,0,46.5,75a2.76,2.76,0,0,0-2.3,1.16c-.53.75-1,2.17,0,4.66l.15.4.4.17a4.72,4.72,0,0,0,1.68.33c.84,0,2.83-.3,3.26-3.07A3.05,3.05,0,0,0,49,76.13Zm-3.06,3.53c-.49-1.55-.18-2.19-.06-2.36.31-.45,1.17-.35,1.58.13a1.07,1.07,0,0,1,.24.91C47.43,80,46.49,79.78,45.93,79.66ZM31.55,78.05a2.51,2.51,0,0,0,3.33,0c1.48-1.34,1.8-4.8.64-7a3.29,3.29,0,0,0-4.29-1.66l-.25.09-.17.21c-.11.13-2.73,3.31-1.1,6.39A5.65,5.65,0,0,0,31.55,78.05Zm.63-6.85a1.25,1.25,0,0,1,1.57.78c.77,1.46.53,3.87-.22,4.54-.1.09-.29.26-.86-.14a3.64,3.64,0,0,1-1.19-1.26C30.67,73.61,31.75,71.82,32.18,71.21Zm2.7,16.1A31.12,31.12,0,0,1,24.81,90l-2.42.07,11.19,10.79.6-1.32c1.63-3.59,4.17-9.9,3-11.74A1.73,1.73,0,0,0,34.89,87.31Zm-2,10.08-5.82-5.61a38.31,38.31,0,0,0,8.39-2.52C35.46,90.53,34.41,93.86,32.9,97.4Z"/></g><g id="Outline"><path class="cls-3" d="M90,10a6,6,0,1,0,6,6A6,6,0,0,0,90,10Zm0,8a2,2,0,1,1,2-2A2,2,0,0,1,90,18ZM103,3a11.23,11.23,0,0,0-8.14-3C85.26,0,72.43,8.36,68.58,20.8A16.26,16.26,0,0,1,52.81,32.22a10.1,10.1,0,0,1-6.42-2.61l-3-3a2,2,0,0,0-2.83,0l-40,40a2,2,0,0,0,0,2.83l36,36a2,2,0,0,0,2.83,0l40-40a2,2,0,0,0,0-2.83l-2.82-2.82c-1.86-1.86-2.92-7.71-2.16-10.73a15.92,15.92,0,0,1,10.7-11.79c11.1-3.4,18.29-13.5,20.27-21.45C106.73,10.44,105.88,5.9,103,3ZM38,101.16,4.82,68,32,40.84,65.17,74Zm63.52-86.32C99.74,22,93.13,30.63,83.95,33.44c-6.71,2.06-11.6,7.4-13.41,14.65-1,4.1.18,11.49,3.22,14.52L75.16,64,68,71.17,34.84,38,42,30.86l1.57,1.57a14,14,0,0,0,9.25,3.78A20.35,20.35,0,0,0,72.41,22C75.68,11.39,86.86,4,94.84,4a7.51,7.51,0,0,1,5.32,1.84C102.67,8.34,102.08,12.55,101.51,14.84Z"/></g></g></svg></span>
+      <span id="ranbo-pin"><img src="https://pixabay.com/get/g6aa630408baf0eb9f6a90c8b70f083a00a262be8e1398b5d7485393ad971b72ebf61a6afadd0ad852f7366e5ce9b29090d672a0cd9ac5002c5cb5c990d8881c794b849474e34393867f728645e747b8b_640.png" alt="ranboPin"></span>
+    </div>
+  </header>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
+  let color = document.getElementById('color');
+  let size = document.getElementById('size');
+  let boardColor = document.getElementById('Bcolor');
+  let rainboActive = false;
+
+  const canvas = document.getElementById('draw');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  ctx.strokeStyle = color.value;
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+  ctx.lineWidth = size.value;
+  let hue = 0;
+  // ctx.globalCompositeOperation = 'source-over';
+
+
+  let isDrawing = false;
+  let [lastX, lastY] = [0, 0];
+
+  function draw(e) {
+    if(!isDrawing) return;
+
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+
+    if(!rainboActive) {
+      ctx.strokeStyle = color.value
+    } else{
+      ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    }
+
+    [lastX, lastY] = [e.offsetX, e.offsetY]
+    hue++
+    if(hue >= 360) hue = 0;
+  }
+
+  function updateColor() {
+    ctx.strokeStyle = color.value;
+  }
+  function updateSize() {
+    ctx.lineWidth = size.value;
+    (size.value < 1) ? size.value = 1 : size.value > 300 ? size.value = 300 : true;
+  }
+  function updateBoardColor() {
+    canvas.style.backgroundColor = boardColor.value;
+  }
+
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  })
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', () => isDrawing = false)
+  canvas.addEventListener('mouseout', () => isDrawing = false)
+
+  color.addEventListener('change', updateColor)
+  size.addEventListener('change', updateSize)
+  size.addEventListener('input', updateSize)
+  boardColor.addEventListener('change', updateBoardColor)
+  document.getElementById('erase').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  })
+
+  let ranboPin = document.getElementById('ranbo-pin');
+  ranboPin.addEventListener('click', () => {
+    rainboActive = !rainboActive
+    !rainboActive ? ranboPin.style.background = '#fff' : ranboPin.style.background = '#eeeeee';
+  })
 </script>
 
 <style>
+  html{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
   html, body {
     margin: 0;
+    overflow: hidden;
+  }
+  canvas {
+    background-color: #fff;
+  }
+  header{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -6px 20px 0px #000;
+  }
+  header > div, header div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 5px;
+  }
+  div > div {
+    gap: 5px;
+  }
+  header input{
+    height: 30px;
+    width: 70px;
+  }
+  header * {
+    user-select: none;
+  }
+  header input[type="number"] {
+    height: 24px;
+  }
+  header span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    &:hover{
+      cursor: pointer;
+      color: red;
+    }
+  }
+  span img{
+    width: 35px;
+  }
+  span svg{
+    width: 30px;
   }
 </style>
 
