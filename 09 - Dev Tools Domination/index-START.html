@@ -10,6 +10,7 @@
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
+    console.time('fetching data');
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
     function makeGreen() {
@@ -19,29 +20,51 @@
     }
 
     // Regular
-
+    console.log('hello i am regular')
     // Interpolated
-
+    console.log('hello i am %s', 'interpolated')
     // Styled
-
+    console.log('%c i have some styles', 'color: blue; border-left: 5px solid red; font-family: terminal; font-size: 25px')
     // warning!
-
+    console.warn('i am a warning')
     // Error :|
-
+    console.error('i am a error')
     // Info
-
+    console.info('i am a info')
     // Testing
-
+    console.assert(1 < 2, 'i am here because test is passed')
     // clearing
-
+    console.clear()
     // Viewing DOM Elements
-
+    console.log(document.querySelector('p'))
+    console.dir(document.querySelector('p'))
     // Grouping together
-
+    let devs = [{name: 'wahid', age: 17}, {name: 'elyas', age: 16}, {name: 'salaam', age: 18}]
+    for(dev of devs) {
+      console.groupCollapsed(`${dev.name}`)
+        console.log(`dev is named ${dev.name}`)
+        console.log(`he is ${dev.age} years old`)
+      console.groupEnd(`${dev.name}`)
+    }
     // counting
-
+    console.count('bread')
+    console.count('bernardo')
+    console.count('bread')
+    console.count('bernardo')
+    console.count('bread')
+    console.count('bernardo')
+    console.count('bread')
+    console.count('bernardo')
+    console.count('bread')
+    console.count('bernardo')
+    console.count('bread')
+    console.count('bernardo')
+    console.count('bread')
+    console.count('bernardo')
     // timing
+    console.timeEnd('fetching data');
 
+    console.table(dogs)
   </script>
 </body>
 </html>

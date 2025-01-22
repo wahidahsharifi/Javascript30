@@ -12,9 +12,18 @@ body,html {
 
 .keys {
   display: flex;
-  flex: 1;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   min-height: 100vh;
+  justify-content: center;
+}
+
+.direct {
+  flex-direction: row-reverse;
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 }
