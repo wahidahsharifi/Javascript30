@@ -7,6 +7,21 @@
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
-    <script></script>
+    <script>
+      const arr = []
+      const word = 'wahid'
+
+      document.addEventListener('keyup', e => {
+        arr.push(e.key)
+        if(arr.length > 5) {
+          arr.shift();
+        }
+        if(arr.join('').includes(word)) {
+          console.log("word found",);
+          cornify_add();
+        }
+        console.log(arr)
+      })
+    </script>
   </body>
 </html>
